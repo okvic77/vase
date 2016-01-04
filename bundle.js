@@ -12,7 +12,7 @@ module.exports = {
         uglify: ['production'],
         minCSS: ['production'],
         rev: ['production'],
-        maps: process.env.NODE_ENV == 'production',
+        maps: process.env.NODE_ENV != 'production',
         transforms: {
           styles: assets.append
         },

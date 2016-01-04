@@ -1,0 +1,21 @@
+{
+  "name": "Base",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "okvic77 <okvic77@users.noreply.github.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic": "semantic-ui#~2.1.7"
+  }
+}
