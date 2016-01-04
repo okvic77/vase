@@ -29,6 +29,7 @@
   "dependencies": {
     "express": "^4.13.3",
     "jade": "^1.11.0",
+    "mongoose": "^4.3.4",
     "underscore": "^1.8.3",
     "winston": "^2.1.1"
   }

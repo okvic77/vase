@@ -1,5 +1,8 @@
 "use strict";
 global.winston = require('winston');
+
+global.db = require('./core/mongoose');
+
 var express = require('express');
 
 winston.level = 'debug';

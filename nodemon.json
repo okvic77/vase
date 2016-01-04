@@ -1,0 +1,4 @@
+{
+  "watch": ["app"],
+  "ignore": ["app/public", "app/*.json"]
+}
