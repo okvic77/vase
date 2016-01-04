@@ -3,7 +3,11 @@ module.exports = {
   bundle: {
     main: {
       scripts: [
-        './bower_components/semantic/dist/semantic.min.js',
+        './bower_components/jquery/dist/jquery.js',
+        './bower_components/semantic/dist/semantic.js',
+        './bower_components/react/react.js',
+        './bower_components/react/react-dom.js',
+        './bower_components/react-router/index.js'
       ],
       styles: [
         './bower_components/semantic/dist/semantic.min.css'

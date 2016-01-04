@@ -46,19 +46,36 @@ gulp.task('webpack', function() {
     }
   }));
 
-  return gulp.src('workspace/**/*.js')
+  return gulp.src(['workspace/**/*.js'])
     .pipe(named())
     .pipe(webpack({
       devtool: !public_env ? 'source-map' : null,
       plugins: plugins,
       resolve: {
-        modulesDirectories: ['web_modules', 'workspace']
+        modulesDirectories: ['web_components', 'workspace', 'bower_components']
       },
       output: {
         filename: (public_env) ? "[name].[hash].js" : "[name].js",
       },
+      module: {
+        loaders: [{
+          test: /\.js?$/,
+          exclude: /(node_modules|bower_components)/,
+          loader: 'babel',
+          query: {
+            cacheDirectory: true,
+            presets: ['react', 'es2015']
+          }
+        }]
+      }
     }))
     .pipe(gulp.dest('app/public'));
 });
 
+
+
 gulp.task('build', ['webpack', 'bundle']);
+
+gulp.task('default', ['build'], function() {
+  gulp.watch('workspace/**/*', ['webpack']);
+});

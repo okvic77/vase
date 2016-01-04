@@ -5,11 +5,23 @@ var express = require('express');
 winston.level = 'debug';
 
 var app = express();
+app.set('views', `${__dirname}/views`);
+app.set('view engine', 'jade');
 
-app.use('/static', express.static('./public'));
+app.locals = {
+  assets: require('./assets.json'),
+  webpack: require('./webpack.json'),
+  static: function (to) {
+    return `/static/${to}`;
+  }
+};
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+app.use('/static', express.static(`${__dirname}/public`), function (req, res) {
+  res.status(404).send('not found');
+});
+
+app.get('/*', function (req, res) {
+  res.render('app');
 });
 
 var server = app.listen(3000, () =>
