@@ -25,6 +25,11 @@ module.exports = {
             scripts: 'plain',
             styles: 'plain'
           }
+        },
+        pluginOptions: {
+          'gulp-minify-css': {
+            processImport: false
+          }
         }
       }
     }
