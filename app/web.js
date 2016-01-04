@@ -24,6 +24,6 @@ app.get('/*', function (req, res) {
   res.render('app');
 });
 
-var server = app.listen(3000, () =>
+var server = app.listen(process.env.PORT || 3000, () =>
   winston.debug('server:boot', server.address())
 )
