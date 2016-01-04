@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "bower install && gulp build"
   },
   "keywords": [],
   "author": "",
@@ -12,7 +13,7 @@
   "devDependencies": {
     "gulp": "^3.9.0",
     "gulp-bundle-assets": "^2.23.0",
-    "gulp-bundle-assets-append": "*",
+    "gulp-bundle-assets-append": "^0.0.2",
     "vinyl-named": "^1.1.0",
     "webpack-stream": "^3.1.0"
   },

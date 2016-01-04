@@ -60,3 +60,5 @@ gulp.task('webpack', function() {
     }))
     .pipe(gulp.dest('app/public'));
 });
+
+gulp.task('build', ['webpack', 'bundle']);
